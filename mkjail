@@ -15,7 +15,7 @@ function DerefSymLink() {
 RealExec="$(DerefSymLink "$0")"
 RealExecDir="$(dirname "$RealExec")"
 OriginalPWD="$(pwd -P)"
-cd "$OriginalPWD"
+cd "$RealExecDir"
 
 [ $# -ne 1 ] && {
     echo "usage: $0 JAILNAME"
