@@ -1,4 +1,7 @@
 /bin/bash
+/dev/null
+/dev/urandom
+/dev/zero
 /usr/lib/dyld
 /usr/lib/libDiagnosticMessagesClient.dylib
 /usr/lib/libSystem.B.dylib

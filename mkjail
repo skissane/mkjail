@@ -41,12 +41,26 @@ mkdir -p $JAILDIR || {
 
 echo "+ Copying required files into jail ($FILECOUNT files)..."
 for file in $FILES; do
-    [ -d $file ] && {
-        mkdir -p $JAILDIR$file || {
-            echo "ERROR: Failed to copy file into jail: $JAILDIR$file"
+    [ -c $file ] && {
+        mkdir -p "$(dirname $JAILDIR$file)" || {
+            echo "ERROR: Cannot create parent dir for: $JAILDIR$file"
             exit 1
         }
-    } || {
+        majmin="$(ls -l /dev/null | awk '{print $5, $6}' | tr -d ,)"
+        if [ ! -c $JAILDIR$file ]; then
+            mknod $JAILDIR$file c $majmin || {
+                echo "ERROR: Failed to create device node: $JAILDIR$file"
+                exit 1
+            }
+        fi
+    }
+    [ -d $file ] && {
+        mkdir -p $JAILDIR$file || {
+            echo "ERROR: Failed to copy directory into jail: $JAILDIR$file"
+            exit 1
+        }
+    }
+    [ -f $file ] && {
         mkdir -p "$(dirname $JAILDIR$file)" || {
             echo "ERROR: Cannot create parent dir for: $JAILDIR$file"
             exit 1
