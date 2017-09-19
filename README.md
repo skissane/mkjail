@@ -10,3 +10,7 @@ The ```addtojail``` script can be used to easily add a new executable to that
 file, which will include it in future ```mkjail``` executions. It calls
 ```recurse``` to ensure that all shared libraries it depends upon (directly or
 indirectly) are also added.
+
+## License
+
+This script is public domain and I relinquish all copyright on it.
