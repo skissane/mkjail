@@ -1,4 +1,5 @@
 /bin/bash
+/bin/sh
 /dev/null
 /dev/urandom
 /dev/zero
@@ -28,6 +29,7 @@
 /usr/lib/system/libsystem_configuration.dylib
 /usr/lib/system/libsystem_coreservices.dylib
 /usr/lib/system/libsystem_coretls.dylib
+/usr/lib/system/libsystem_darwin.dylib
 /usr/lib/system/libsystem_dnssd.dylib
 /usr/lib/system/libsystem_info.dylib
 /usr/lib/system/libsystem_kernel.dylib
@@ -41,6 +43,7 @@
 /usr/lib/system/libsystem_sandbox.dylib
 /usr/lib/system/libsystem_secinit.dylib
 /usr/lib/system/libsystem_stats.dylib
+/usr/lib/system/libsystem_symptoms.dylib
 /usr/lib/system/libsystem_trace.dylib
 /usr/lib/system/libunc.dylib
 /usr/lib/system/libunwind.dylib
